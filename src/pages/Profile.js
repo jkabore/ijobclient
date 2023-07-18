@@ -11,7 +11,7 @@ const Profile = () => {
   const [activeTab, setActiveTab] = useState("1");
 
   const onChange = (activeTab) => {
-    console.log(activeTab);
+    console.log("");
   };
 
   // user info from localStorage

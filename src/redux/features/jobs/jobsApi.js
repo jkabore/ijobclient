@@ -141,7 +141,6 @@ export const jobsApi = apiSlice.injectEndpoints({
     async onQueryStarted(arg, { queryFulfilled, dispatch }) {
       try {
         const result = await queryFulfilled;
-        console.log("result", result.data);
 
         dispatch(
           apiSlice.util.updateQueryData("getAllJobs", undefined, (draft) => {

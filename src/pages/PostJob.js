@@ -15,7 +15,7 @@ const PostJob = () => {
   }
   function onFinalFormFinish(values) {
     const finalObj = { ...jobInfo, ...values };
-    console.log(finalObj);
+
     postJob(finalObj);
     window.location.href = "/";
   }

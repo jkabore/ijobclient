@@ -24,7 +24,7 @@ const EditJob = () => {
     const finalObj = { ...jobInfo, ...values };
 
     finalObj._id = id;
-    console.log(finalObj);
+
     editJob(finalObj);
     window.location.href = "/";
   }
