@@ -1,7 +1,7 @@
 import "antd/dist/reset.css";
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import React, { useEffect } from "react";
+import React from "react";
 import { useGetAllUsersQuery } from "./redux/features/auth/authApi";
 import Home from "./pages/Home";
 import EditJob from "./pages/EditJob";
@@ -9,7 +9,7 @@ import JobInfo from "./pages/JobInfo";
 import Profile from "./pages/Profile";
 import PostJob from "./pages/PostJob";
 import AppliedJobs from "./pages/AppliedJobs";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 import { ToastContainer } from "react-toastify";

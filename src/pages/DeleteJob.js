@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Button, Modal } from "antd";
-import { useParams } from "react-router-dom";
+import { Modal } from "antd";
+
 import { useDeleteJobMutation } from "../redux/features/jobs/jobsApi";
 import DefaultLayout from "../components/DefaultLayout";
 import Notifications from "../components/Notifications";
@@ -15,10 +15,8 @@ const DeleteJob = () => {
   }, []);
 
   const handleDelete = (id) => {
-   
     deleteJob(id);
     setIsModalOpen(false);
-   
   };
 
   const handleCancel = () => {

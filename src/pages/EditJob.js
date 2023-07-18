@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import DefaultLayout from "../components/DefaultLayout";
 import { Row, Col, Form, Tabs, Input, Button, Select } from "antd";
 import { useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useEditJobMutation } from "../redux/features/jobs/jobsApi";
 import Notifications from "../components/Notifications";
 const { TextArea } = Input;

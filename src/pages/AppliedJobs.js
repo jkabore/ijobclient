@@ -1,6 +1,6 @@
 import React from "react";
 import DefaultLayout from "../components/DefaultLayout";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { Table } from "antd";
 
 const AppliedJobs = () => {

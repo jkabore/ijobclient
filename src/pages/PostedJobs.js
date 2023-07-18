@@ -3,7 +3,7 @@ import DefaultLayout from "../components/DefaultLayout";
 import { useSelector, useDispatch } from "react-redux";
 import { Table, Modal } from "antd";
 import { useDeleteJobMutation } from "../redux/features/jobs/jobsApi";
-import { toast } from "react-toastify";
+
 import { getJobsData } from "../redux/features/jobs/jobSlice";
 import {
   DeleteOutlined,
@@ -36,6 +36,7 @@ const PostedJobs = () => {
     } else {
       setPostedJob(data);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
   let userPostedJobs = postedJob.filter((job) => job?.postedBy === userid);
 

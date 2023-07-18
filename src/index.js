@@ -3,8 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { Provider } from "react-redux";
-import { ApiProvider } from "@reduxjs/toolkit/query/react";
-import { jobsApi } from "./redux/features/jobs/jobsApi";
+
 import store from "./redux/store";
 import reportWebVitals from "./reportWebVitals";
 

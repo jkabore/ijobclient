@@ -1,9 +1,9 @@
 import { Button, Tag } from "antd";
 import moment from "moment";
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import DefaultLayout from "../components/DefaultLayout";
 import { useApplyJobMutation } from "../redux/features/jobs/jobsApi";
 import Notifications from "../components/Notifications";
@@ -23,8 +23,6 @@ function JobInfo() {
   const alreadyApplied = appliedCandidates.find(
     (candidate) => candidate?.userid === userid
   );
-
-  const dispatch = useDispatch();
 
   function applyNow() {
     applyJob({ userid, job });

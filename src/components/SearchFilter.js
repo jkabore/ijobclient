@@ -25,7 +25,7 @@ const SearchFilter = () => {
     skip: debounce === "",
   });
   const { data: sortedData } = useSortJobsQuery(selectedValues);
-  const jobs = useSelector((state) => state.jobs.searchedJobs);
+  //const jobs = useSelector((state) => state.jobs.searchedJobs);
 
   const handleChange = (value) => {
     dispatch(setSearchQuery(value));

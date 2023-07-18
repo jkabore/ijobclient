@@ -1,8 +1,8 @@
 import React from "react";
 import { toast } from "react-toastify";
 import Spinner from "./Spinner";
-import { v4 as uuidv4 } from "uuid";
-const Notifications = ({ isLoading, isSuccess, error, info, }) => {
+
+const Notifications = ({ isLoading, isSuccess, error, info }) => {
   if (isLoading) {
     return <Spinner />;
   }
