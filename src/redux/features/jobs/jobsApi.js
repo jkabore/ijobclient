@@ -43,7 +43,6 @@ export const jobsApi = apiSlice.injectEndpoints({
       query: (data) => {
         const id = data._id;
 
-        console.log("body: ", data);
         return {
           url: `/jobs/getalljobs/${id}`,
           method: "PUT",
@@ -84,7 +83,7 @@ export const jobsApi = apiSlice.injectEndpoints({
             })
           );
           setTimeout(() => {
-            window.location.href = "/";
+            window.location.href = "/home";
           }, 1000);
         } catch (error) {
           console.log("error: ", error);

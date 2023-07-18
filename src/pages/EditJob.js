@@ -26,7 +26,7 @@ const EditJob = () => {
     finalObj._id = id;
 
     editJob(finalObj);
-    window.location.href = "/";
+    window.location.href = "/home";
   }
 
   const items = [

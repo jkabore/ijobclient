@@ -47,7 +47,6 @@ export const authAPI = apiSlice.injectEndpoints({
           );
           dispatch(
             apiSlice.util.updateQueryData("getAllUsers", undefined, (draft) => {
-              console.log("draft +", draft);
               getUsersData();
             })
           );
@@ -60,7 +59,7 @@ export const authAPI = apiSlice.injectEndpoints({
             })
           );
           setTimeout(() => {
-            window.location.href = "/";
+            window.location.href = "/home";
           }, 1000);
         } catch (err) {
           console.log(err);
@@ -99,8 +98,6 @@ export const authAPI = apiSlice.injectEndpoints({
       async onQueryStarted(arg, { queryFulfilled, dispatch }) {
         try {
           const updateUser = await queryFulfilled;
-
-          console.log("arg: ", updateUser.data);
 
           dispatch(
             apiSlice.util.updateQueryData("getAllUsers", arg?.id, (draft) => {

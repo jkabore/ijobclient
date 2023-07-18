@@ -17,7 +17,7 @@ const PostJob = () => {
     const finalObj = { ...jobInfo, ...values };
 
     postJob(finalObj);
-    window.location.href = "/";
+    window.location.href = "/home";
   }
   const items = [
     {

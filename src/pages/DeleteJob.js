@@ -12,6 +12,7 @@ const DeleteJob = () => {
   const navigate = useNavigate();
   useEffect(() => {
     setIsModalOpen(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleDelete = (id) => {
