@@ -7,7 +7,7 @@ export const authAPI = apiSlice.injectEndpoints({
     // register process
     register: builder.mutation({
       query: (data) => ({
-        url: "/users/register",
+        url: "/api/users/register",
         method: "POST",
         body: data,
       }),
@@ -18,7 +18,7 @@ export const authAPI = apiSlice.injectEndpoints({
 
           // navigate to home page
           setTimeout(() => {
-            window.location.href = "/login";
+            window.location.href = "/";
           }, 1000);
         } catch (err) {
           console.log(err);
@@ -29,7 +29,7 @@ export const authAPI = apiSlice.injectEndpoints({
     // login process
     login: builder.mutation({
       query: (data) => {
-        return { url: "/users/login", method: "POST", body: data };
+        return { url: "/api/users/login", method: "POST", body: data };
       },
 
       async onQueryStarted(arg, { queryFulfilled, dispatch }) {
@@ -68,7 +68,7 @@ export const authAPI = apiSlice.injectEndpoints({
     }),
     // Get ALL users
     getAllUsers: builder.query({
-      query: () => "/users/getallusers",
+      query: () => "/api/users/getallusers",
       async onQueryStarted(arg, { queryFulfilled, dispatch }) {
         try {
           const result = await queryFulfilled;
@@ -89,7 +89,7 @@ export const authAPI = apiSlice.injectEndpoints({
         const { id, ...body } = data;
         console.log("body: ", body.data);
         return {
-          url: `/users/user/${id}`,
+          url: `/api/users/user/${id}`,
           method: "PUT",
           body: body.data,
         };

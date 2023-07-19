@@ -7,7 +7,6 @@ const Notifications = ({ isLoading, isSuccess, error, info }) => {
     return <Spinner />;
   }
   if (isSuccess && info !== "") {
-    console.log("info", info);
     toast.success(`${info}`, {
       toastId: "success1",
     });

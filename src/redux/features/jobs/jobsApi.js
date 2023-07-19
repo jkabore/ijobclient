@@ -5,7 +5,7 @@ export const jobsApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     // Get ALL jobs
     getAllJobs: builder.query({
-      query: () => "/jobs/getalljobs",
+      query: () => "/api/jobs/getalljobs",
       providesTags: ["Jobs"],
     }),
 
@@ -13,9 +13,9 @@ export const jobsApi = apiSlice.injectEndpoints({
     postJob: builder.mutation({
       query: (data) => {
         data.postedBy = JSON.parse(localStorage.getItem("auth")).user._id;
-        console.log("posted", data);
+
         return {
-          url: "/jobs/postjob",
+          url: "/api/jobs/postjob",
           method: "POST",
           body: data,
         };
@@ -36,7 +36,7 @@ export const jobsApi = apiSlice.injectEndpoints({
     }),
 
     getJob: builder.query({
-      query: (id) => `/getalljobs/${id}`,
+      query: (id) => `/api/getalljobs/${id}`,
     }),
 
     editJob: builder.mutation({
@@ -44,7 +44,7 @@ export const jobsApi = apiSlice.injectEndpoints({
         const id = data._id;
 
         return {
-          url: `/jobs/getalljobs/${id}`,
+          url: `/api/jobs/getalljobs/${id}`,
           method: "PUT",
           body: data,
         };
@@ -68,7 +68,7 @@ export const jobsApi = apiSlice.injectEndpoints({
     applyJob: builder.mutation({
       query: (data) => {
         return {
-          url: "/jobs/applyjob",
+          url: "/api/jobs/applyjob",
           method: "POST",
           body: data,
         };
@@ -96,7 +96,7 @@ export const jobsApi = apiSlice.injectEndpoints({
       query: (title) => {
         if (title !== null) {
           return {
-            url: `/jobs/search/${title}`,
+            url: `/api/jobs/search/${title}`,
             method: "POST",
           };
         }
@@ -104,7 +104,7 @@ export const jobsApi = apiSlice.injectEndpoints({
     }),
     // search jobs
     sortJobs: builder.query({
-      query: () => `/jobs/getalljobs`,
+      query: () => `/api/jobs/getalljobs`,
       async onQueryStarted(arg, { queryFulfilled, dispatch }) {
         try {
           const jobs = await queryFulfilled;
@@ -130,7 +130,7 @@ export const jobsApi = apiSlice.injectEndpoints({
     deleteJob: builder.mutation({
       query: (id) => {
         return {
-          url: `/jobs/deletejob/${id}`,
+          url: `/api/jobs/deletejob/${id}`,
           method: "DELETE",
         };
       },
