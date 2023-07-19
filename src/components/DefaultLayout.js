@@ -34,7 +34,7 @@ const DefaultLayout = ({ children }) => {
     localStorage.clear();
   };
   const clickToReload = () => {
-    navigate("/");
+    navigate("/home");
     //window.location.href = "/";
     window.location.reload();
   };
@@ -68,11 +68,11 @@ const DefaultLayout = ({ children }) => {
           defaultSelectedKeys={[window.location.pathname]}
           items={[
             {
-              key: "/",
+              key: "/home",
               icon: collapsed ? <HomeOutlined /> : null,
               label: (
                 <Link
-                  to="/"
+                  to="/home"
                   onClick={clickToReload}
                   style={{ marginRight: 40 }}
                 >

@@ -7,6 +7,7 @@ const baseQuery = fetchBaseQuery({
   baseUrl: `${devEnv ? REACT_APP_DEV_API : REACT_APP_PROD_API}`,
   prepareHeaders: async (headers, { getState, endpoint }) => {
     const token = getState()?.auth?.accessToken;
+    console.log("token: ", token);
 
     if (token) {
       headers.set("Authorization", `Bearer ${token}`);

@@ -62,7 +62,7 @@ export const authAPI = apiSlice.injectEndpoints({
             window.location.href = "/home";
           }, 1000);
         } catch (err) {
-          console.log(err);
+          console.log("error", err);
         }
       },
     }),
