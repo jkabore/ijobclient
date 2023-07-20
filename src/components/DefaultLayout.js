@@ -32,6 +32,7 @@ const DefaultLayout = ({ children }) => {
   const logout = () => {
     dispatch(userLoggedOut());
     localStorage.clear();
+    window.location.href = "/";
   };
   const clickToReload = () => {
     navigate("/home");

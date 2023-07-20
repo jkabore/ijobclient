@@ -30,7 +30,7 @@ export const jobsApi = apiSlice.injectEndpoints({
             })
           );
         } catch (error) {
-          console.log("error in catch block");
+          console.log("error in catch block",error);
         }
       },
     }),

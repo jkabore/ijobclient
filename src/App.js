@@ -33,6 +33,7 @@ function App() {
   const { data } = useGetAllUsersQuery();
   useEffect(() => {
     getUsersData(data);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const dispatchUsers = async () => {
     try {
@@ -40,7 +41,7 @@ function App() {
         dispatch(getUsersData(data));
       }
     } catch (error) {
-      console("Erro: ", error);
+      console("Error: ", error);
     }
   };
 
