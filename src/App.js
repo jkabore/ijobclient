@@ -1,7 +1,7 @@
 import "antd/dist/reset.css";
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import React from "react";
+import React, { useEffect } from "react";
 import { useGetAllUsersQuery } from "./redux/features/auth/authApi";
 import Home from "./pages/Home";
 import EditJob from "./pages/EditJob";
@@ -31,12 +31,20 @@ function App() {
   const dispatch = useDispatch();
   const authChecked = useAuthCheck();
   const { data } = useGetAllUsersQuery();
-
-  const dispatchUsers = () => {
-    dispatch(getUsersData(data));
+  useEffect(() => {
+    getUsersData(data);
+  }, []);
+  const dispatchUsers = async () => {
+    try {
+      if (authChecked) {
+        dispatch(getUsersData(data));
+      }
+    } catch (error) {
+      console("Erro: ", error);
+    }
   };
 
-  authChecked ?? dispatchUsers();
+  dispatchUsers();
 
   return !authChecked ? (
     <div className=" d-flex justify-content-center">

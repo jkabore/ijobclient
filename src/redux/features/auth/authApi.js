@@ -61,7 +61,7 @@ export const authAPI = apiSlice.injectEndpoints({
           );
           setTimeout(() => {
             window.location.href = "/home";
-          }, 1000);
+          }, 10000);
         } catch (err) {
           console.log("error", err);
         }
@@ -80,7 +80,7 @@ export const authAPI = apiSlice.injectEndpoints({
 
           dispatch(getUsersData(result.data));
         } catch (err) {
-          console.log(err);
+          console.log("error", err.message);
         }
       },
     }),
